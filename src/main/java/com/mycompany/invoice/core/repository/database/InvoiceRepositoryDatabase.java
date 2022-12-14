@@ -12,11 +12,12 @@ public class InvoiceRepositoryDatabase implements InvoiceRepositoryInterface {
 
     private static List<Invoice> invoices = new ArrayList<Invoice>();
 
-    public void create(Invoice invoice) {
+    public Invoice create(Invoice invoice) {
         invoices.add(invoice);
         System.out.println("Database : Invoice added with number " + invoice.getNumber() + " for " + invoice.getCustomerName());
         /* PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO FACTURE (NUMBER,DESCRIPTION) VALUES (?,?");
         preparedStatement.executeUpdate();*/
+        return invoice;
     }
 
     @Override

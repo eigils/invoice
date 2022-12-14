@@ -20,7 +20,7 @@ public class InvoiceControllerKeyboard implements InvoiceControllerInterface {
         this.invoiceService = invoiceService;
     }
 
-    public String createInvoice(Invoice invoice) {
+    public Invoice createInvoice(Invoice invoice) {
         System.out.println( "Quel est le nom du client?" );
 
         Scanner sc= new Scanner(System.in);
@@ -29,6 +29,6 @@ public class InvoiceControllerKeyboard implements InvoiceControllerInterface {
         invoice.setCustomerName(customerName);
 
         invoiceService.createInvoice(invoice);
-        return null;
+        return invoice;
     }
 }
