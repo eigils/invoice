@@ -13,7 +13,7 @@ public class InvoiceServiceNumber implements InvoiceServiceInterface {
 
     //private static long lastNumber=0L;
 
-    @Autowired
+   @Autowired
     private InvoiceRepositoryInterface invoiceRepository;
 
     public InvoiceRepositoryInterface getInvoiceRepository() {
@@ -26,16 +26,16 @@ public class InvoiceServiceNumber implements InvoiceServiceInterface {
 
     public Invoice createInvoice(Invoice invoice) {
         //invoice.setNumber(String.valueOf(++lastNumber));
-        return invoiceRepository.create(invoice);
+        return invoiceRepository.save(invoice);
     }
 
     @Override
     public Invoice getInvoiceByNumber(String number) {
-        return invoiceRepository.getById(number);
+        return invoiceRepository.findById(number).orElseThrow();
     }
 
     @Override
-    public List<Invoice> getInvoiceList() {
-        return invoiceRepository.list();
+    public Iterable<Invoice> getInvoiceList() {
+        return invoiceRepository.findAll();
     }
 }

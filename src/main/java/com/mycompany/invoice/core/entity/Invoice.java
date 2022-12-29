@@ -1,8 +1,14 @@
 package com.mycompany.invoice.core.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+
 public class Invoice {
+    @Id
+    @Column("INVOICE_NUMBER")
     private String number;
     private String customerName;
+    private String orderNumber;
 
     public Invoice(String number, String customerName) {
         this.number = number;
@@ -17,8 +23,6 @@ public class Invoice {
 
     public Invoice() {
     }
-
-    private String orderNumber;
 
     public String getNumber() {
         return number;
