@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;*/
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
+/*import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;*/
 
 /**
  * Hello world!
@@ -23,10 +23,10 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
         "com.mycompany.invoice.service.prefix"
 })*/
 //@PropertySource("classpath:application.properties")
-public class App 
+/*public class App
 {
     public static void main( String[] args )
-    {
+    {*/
 
 
        /* Scanner sc= new Scanner(System.in);
@@ -98,11 +98,11 @@ public class App
         InvoiceControllerInterface invoiceController = context.getBean(InvoiceControllerInterface.class);
         invoiceController.createInvoice();*/
 
-    }
+    /*}*/
 
 
    /* @Bean
     public InvoiceServiceInterface configureInvoiceService() {
         return new InvoiceServicePrefix();
     }*/
-}
+/*}*/

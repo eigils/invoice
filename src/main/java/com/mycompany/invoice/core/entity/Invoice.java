@@ -1,11 +1,18 @@
 package com.mycompany.invoice.core.entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
+//import org.springframework.data.annotation.Id;
 
+//import org.springframework.data.relational.core.mapping.Column;
+
+import javax.persistence.*;
+
+@Entity
 public class Invoice {
+    //@Id
     @Id
-    @Column("INVOICE_NUMBER")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column("INVOICE_NUMBER") notation Jdbc
+    @Column(name="INVOICE_NUMBER")
     private String number;
     private String customerName;
     private String orderNumber;
