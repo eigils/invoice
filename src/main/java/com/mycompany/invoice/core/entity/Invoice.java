@@ -17,7 +17,7 @@ public class Invoice {
     private String number;
     @Column(length = 13)
     private String orderNumber;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY/*, cascade = CascadeType.PERSIST*/)
     @JoinColumn(name = "ID_CUSTOMER", nullable = false)
     private Customer customer;
     @OneToMany(
