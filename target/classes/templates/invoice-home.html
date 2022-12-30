@@ -16,7 +16,7 @@
     <table border="1">
         <tr th:each="invoice: ${invoices}">
             <td th:text="${invoice.number}"></td>
-            <td th:text="${invoice.customerName}"></td>
+            <td th:text="${invoice.customer.name}"></td>
         </tr>
     </table>
 </ul>

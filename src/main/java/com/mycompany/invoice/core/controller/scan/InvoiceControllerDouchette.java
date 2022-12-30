@@ -3,6 +3,7 @@ package com.mycompany.invoice.core.controller.scan;
 import com.mycompany.invoice.core.controller.InvoiceControllerInterface;
 import com.mycompany.invoice.core.entity.Invoice;
 import com.mycompany.invoice.core.service.InvoiceServiceInterface;
+import com.mycompany.invoice.core.entity.Customer;
 
 //@Controller
 public class InvoiceControllerDouchette implements InvoiceControllerInterface {
@@ -18,11 +19,12 @@ public class InvoiceControllerDouchette implements InvoiceControllerInterface {
     }
 
     @Override
-    public Invoice createInvoice(Invoice invoice) {
+    public String createInvoice(Invoice invoice) {
         System.out.println("Usage of a scanner");
         invoice = new Invoice();
-        invoice.setCustomerName("Virgin Galactic");
+        Customer customer = new Customer("Virgin Galactic");
+        invoice.setCustomer(customer);
         invoiceService.createInvoice(invoice);
-        return invoice;
+        return null;
     }
 }
